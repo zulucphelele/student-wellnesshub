@@ -1,0 +1,96 @@
+
+
+function checkMood() {
+    let mood = prompt("How are you feeling today? (happy / stressed / sad)");
+
+    if (mood === null) {
+        alert("Mood check cancelled.");
+        return;
+    }
+
+    mood = mood.toLowerCase();
+
+    if (mood === "happy") {
+        alert("😊 Great! Keep up the positive energy and continue balancing your student life.");
+    } 
+    
+    else if (mood === "stressed") {
+        alert("😟 It’s okay to feel stressed. Take a break, manage your workload, and visit the mental health section for support.");
+    } 
+    
+    else if (mood === "sad") {
+        alert("💜 You are not alone. Reach out to student counselling or someone you trust for support.");
+    } 
+    
+    else {
+        alert("Please enter happy, stressed, or sad.");
+    }
+}
+
+
+
+
+function toggleSection(sectionId) {
+    let section = document.getElementById(sectionId);
+
+    if (section.style.display === "none") {
+        section.style.display = "block";
+    } 
+    
+    else {
+        section.style.display = "none";
+    }
+}
+
+
+
+
+function validateForm() {
+    let name = document.getElementById("fullname").value.trim();
+    let email = document.getElementById("studentemail").value.trim();
+    let message = document.getElementById("supportmessage").value.trim();
+
+    
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (name === "") {
+        alert("Please enter your full name.");
+        return false;
+    }
+
+    if (email === "") {
+        alert("Please enter your student email.");
+        return false;
+    }
+
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    if (message === "") {
+        alert("Please explain how we can help you.");
+        return false;
+    }
+
+    if (message.length < 10) {
+        alert("Your message is too short. Please provide more details.");
+        return false;
+    }
+
+    alert("✅ Thank you! Your message has been submitted successfully.");
+    return true;
+}
+
+
+
+window.onload = function () {
+    alert("Welcome to NWU Wellness Hub! 💜 Your wellbeing matters.");
+};
+
+
+
+
+function emergencyHelp() {
+    alert("🚨 Emergency Campus Safety Contact: 0800 000 000");
+}
